@@ -18,6 +18,13 @@
 		054651CA2190CB630067EC1A /* PageThreeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054651C92190CB630067EC1A /* PageThreeController.swift */; };
 		054651CD2190CF3D0067EC1A /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054651CC2190CF3D0067EC1A /* MainController.swift */; };
 		054651CF2190CFE20067EC1A /* PageFourController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054651CE2190CFE20067EC1A /* PageFourController.swift */; };
+		054651D22191EEE20067EC1A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054651D12191EEE20067EC1A /* MainView.swift */; };
+		054651D52192109C0067EC1A /* BarMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054651D42192109C0067EC1A /* BarMenuCell.swift */; };
+		054651D7219226720067EC1A /* HomeCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054651D6219226720067EC1A /* HomeCellController.swift */; };
+		054651DB21924DC40067EC1A /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054651DA21924DC40067EC1A /* ApiService.swift */; };
+		054651DE21924E180067EC1A /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054651DD21924E180067EC1A /* Video.swift */; };
+		054651E121924F240067EC1A /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054651E021924F240067EC1A /* HomeCell.swift */; };
+		CD89CFE2F75F348BEF4C936A /* Pods_WhyDontYou.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E9E54A4574FF69929098912 /* Pods_WhyDontYou.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +41,15 @@
 		054651C92190CB630067EC1A /* PageThreeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageThreeController.swift; sourceTree = "<group>"; };
 		054651CC2190CF3D0067EC1A /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		054651CE2190CFE20067EC1A /* PageFourController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageFourController.swift; sourceTree = "<group>"; };
+		054651D12191EEE20067EC1A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		054651D42192109C0067EC1A /* BarMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarMenuCell.swift; sourceTree = "<group>"; };
+		054651D6219226720067EC1A /* HomeCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellController.swift; sourceTree = "<group>"; };
+		054651DA21924DC40067EC1A /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		054651DD21924E180067EC1A /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		054651E021924F240067EC1A /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		475ABAE3CC86B0F100CA80CD /* Pods-WhyDontYou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhyDontYou.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhyDontYou/Pods-WhyDontYou.debug.xcconfig"; sourceTree = "<group>"; };
+		71179042286D5DB6BB84DEDA /* Pods-WhyDontYou.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhyDontYou.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhyDontYou/Pods-WhyDontYou.release.xcconfig"; sourceTree = "<group>"; };
+		8E9E54A4574FF69929098912 /* Pods_WhyDontYou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhyDontYou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD89CFE2F75F348BEF4C936A /* Pods_WhyDontYou.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +69,8 @@
 			children = (
 				054651A921909ABA0067EC1A /* WhyDontYou */,
 				054651A821909ABA0067EC1A /* Products */,
+				8CA9467558BBF679257A9B47 /* Pods */,
+				E4C1EF2145DFA2F06221D673 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +85,10 @@
 		054651A921909ABA0067EC1A /* WhyDontYou */ = {
 			isa = PBXGroup;
 			children = (
+				054651DC21924E080067EC1A /* Model */,
+				054651D921924DA80067EC1A /* ApiService */,
+				054651D821924D400067EC1A /* MainCellsController */,
+				054651D3219210860067EC1A /* Cells */,
 				054651CB2190CE160067EC1A /* Main */,
 				054651C62190C21D0067EC1A /* GeneralFunctions */,
 				054651C12190A7620067EC1A /* Walkthrough */,
@@ -101,9 +124,68 @@
 		054651CB2190CE160067EC1A /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				054651D02191EEC80067EC1A /* View */,
 				054651CC2190CF3D0067EC1A /* MainController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		054651D02191EEC80067EC1A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				054651D12191EEE20067EC1A /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		054651D3219210860067EC1A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				054651D42192109C0067EC1A /* BarMenuCell.swift */,
+				054651E021924F240067EC1A /* HomeCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		054651D821924D400067EC1A /* MainCellsController */ = {
+			isa = PBXGroup;
+			children = (
+				054651D6219226720067EC1A /* HomeCellController.swift */,
+			);
+			path = MainCellsController;
+			sourceTree = "<group>";
+		};
+		054651D921924DA80067EC1A /* ApiService */ = {
+			isa = PBXGroup;
+			children = (
+				054651DA21924DC40067EC1A /* ApiService.swift */,
+			);
+			path = ApiService;
+			sourceTree = "<group>";
+		};
+		054651DC21924E080067EC1A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				054651DD21924E180067EC1A /* Video.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8CA9467558BBF679257A9B47 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				475ABAE3CC86B0F100CA80CD /* Pods-WhyDontYou.debug.xcconfig */,
+				71179042286D5DB6BB84DEDA /* Pods-WhyDontYou.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E4C1EF2145DFA2F06221D673 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8E9E54A4574FF69929098912 /* Pods_WhyDontYou.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -113,9 +195,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 054651BC21909AC60067EC1A /* Build configuration list for PBXNativeTarget "WhyDontYou" */;
 			buildPhases = (
+				6900E0F769187ABD3418885A /* [CP] Check Pods Manifest.lock */,
 				054651A321909ABA0067EC1A /* Sources */,
 				054651A421909ABA0067EC1A /* Frameworks */,
 				054651A521909ABA0067EC1A /* Resources */,
+				AB19B6C05F523F0A8745DF86 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -171,6 +255,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6900E0F769187ABD3418885A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WhyDontYou-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB19B6C05F523F0A8745DF86 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WhyDontYou/Pods-WhyDontYou-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WhyDontYou/Pods-WhyDontYou-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		054651A321909ABA0067EC1A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -179,11 +302,17 @@
 				054651CD2190CF3D0067EC1A /* MainController.swift in Sources */,
 				054651B321909ABA0067EC1A /* WhyDontYou.xcdatamodeld in Sources */,
 				054651C32190A7D50067EC1A /* PageOneController.swift in Sources */,
+				054651D52192109C0067EC1A /* BarMenuCell.swift in Sources */,
+				054651E121924F240067EC1A /* HomeCell.swift in Sources */,
+				054651D22191EEE20067EC1A /* MainView.swift in Sources */,
+				054651DE21924E180067EC1A /* Video.swift in Sources */,
 				054651C82190C23B0067EC1A /* GeneralFunctions.swift in Sources */,
 				054651C52190A84C0067EC1A /* PageTwoController.swift in Sources */,
+				054651DB21924DC40067EC1A /* ApiService.swift in Sources */,
 				054651CF2190CFE20067EC1A /* PageFourController.swift in Sources */,
 				054651C021909BEF0067EC1A /* WalkthroughController.swift in Sources */,
 				054651AB21909ABA0067EC1A /* AppDelegate.swift in Sources */,
+				054651D7219226720067EC1A /* HomeCellController.swift in Sources */,
 				054651CA2190CB630067EC1A /* PageThreeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,6 +447,7 @@
 		};
 		054651BD21909AC60067EC1A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 475ABAE3CC86B0F100CA80CD /* Pods-WhyDontYou.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -339,6 +469,7 @@
 		};
 		054651BE21909AC60067EC1A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71179042286D5DB6BB84DEDA /* Pods-WhyDontYou.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

@@ -27,7 +27,7 @@ class PageFourController: UIViewController {
         
         
         //MARK: BUTTON
-        self.botonStart.frame = CGRect(x: self.backgroundImage.frame.width * 0.2, y: self.backgroundImage.frame.height * 0.9, width: self.backgroundImage.frame.width * 0.6, height: self.backgroundImage.frame.height * 0.1)
+        self.botonStart.frame = CGRect(x: self.backgroundImage.frame.width * 0.2, y: self.backgroundImage.frame.height * 0.93, width: self.backgroundImage.frame.width * 0.6, height: self.backgroundImage.frame.height * 0.07)
         self.botonStart.layer.cornerRadius = 25
         self.botonStart.backgroundColor = UIColor.black
         self.botonStart.setTitle("Start", for: .normal)
@@ -40,8 +40,9 @@ class PageFourController: UIViewController {
     
     @objc func goToMain(){
         let mainController = MainController()
+        let NC = UINavigationController(rootViewController: mainController)
         UserDefaults.standard.set(true, forKey: "walkthrough")
-        present(mainController, animated: true, completion: nil)
+        present(NC, animated: true, completion: nil)
         print("gotomain")
     }
     
