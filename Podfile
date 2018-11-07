@@ -7,5 +7,7 @@ target 'WhyDontYou' do
 
   # Pods for WhyDontYou
   pod 'Hero'
+  pod 'Fabric'
+  pod 'Crashlytics'
 
 end
