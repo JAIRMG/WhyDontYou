@@ -25,11 +25,13 @@ class MainController: UIViewController {
     
     let horizontalBarView: UIView = UIView()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true;
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //Hide navBar in this controller
-        self.navigationController?.isNavigationBarHidden = true
         
         //MARK: init view
         setUpViews()
@@ -194,6 +196,7 @@ extension MainController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
 extension MainController: SongDelegate {
     func goToDetailSong(song: Video) {
         let detailSong = SongDetailController()
+        detailSong.song = song
         navigationController?.pushViewController(detailSong, animated: true)
         print("Datos: \(song)")
     }

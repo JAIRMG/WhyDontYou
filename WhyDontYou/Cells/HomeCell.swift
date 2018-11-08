@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Hero
 
 class HomeCell: UICollectionViewCell {
     
@@ -30,6 +31,7 @@ class HomeCell: UICollectionViewCell {
             if let profileImageURL = video?.channel?.profile_image_name{
                 self.thumbnailImage.loadImageUsinUrlString(urlString: profileImageURL)
             }
+           
         }
         
     }

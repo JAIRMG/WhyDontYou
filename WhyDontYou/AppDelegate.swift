@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if walkthrough {
             let mainController = MainController()
             firstVC = UINavigationController(rootViewController: mainController)
+            firstVC.navigationController?.isNavigationBarHidden = true
             
         } else {
              firstVC = WalkthroughController()
