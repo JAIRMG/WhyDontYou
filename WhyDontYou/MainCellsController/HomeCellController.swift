@@ -8,6 +8,9 @@
 
 import UIKit
 
+protocol SongDelegate {
+    func goToDetailSong(song: Video)
+}
 
 
 class HomeCellController: UICollectionViewCell {
@@ -15,7 +18,7 @@ class HomeCellController: UICollectionViewCell {
     var collectionHome: UICollectionView!
     let cellHomeId = "cellHomeId"
     var videos: [Video]?
-    
+    var songDelegate: SongDelegate!
 
 
     override init(frame: CGRect) {
@@ -43,7 +46,8 @@ class HomeCellController: UICollectionViewCell {
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 1
+        //Evita el espacio que queda entre celdas al hacer scroll
+        layout.minimumLineSpacing = 0
         layout.scrollDirection = .vertical
         let positionGrid: CGRect = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
         collectionHome = UICollectionView(frame: positionGrid, collectionViewLayout: layout)
@@ -54,6 +58,8 @@ class HomeCellController: UICollectionViewCell {
         addSubview(collectionHome)
         
     }
+    
+    
     
     
 }
@@ -73,6 +79,16 @@ extension HomeCellController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.frame.width, height: self.frame.height * 0.3)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Presiono celda \(indexPath.row)")
+        
+        let video = videos?[indexPath.item]
+        
+        songDelegate.goToDetailSong(song: video!)
+        
+        
     }
     
     

@@ -24,6 +24,7 @@
 		054651DB21924DC40067EC1A /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054651DA21924DC40067EC1A /* ApiService.swift */; };
 		054651DE21924E180067EC1A /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054651DD21924E180067EC1A /* Video.swift */; };
 		054651E121924F240067EC1A /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054651E021924F240067EC1A /* HomeCell.swift */; };
+		054651E42193A6EC0067EC1A /* SongDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054651E32193A6EC0067EC1A /* SongDetailController.swift */; };
 		CD89CFE2F75F348BEF4C936A /* Pods_WhyDontYou.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E9E54A4574FF69929098912 /* Pods_WhyDontYou.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		054651DA21924DC40067EC1A /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		054651DD21924E180067EC1A /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		054651E021924F240067EC1A /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		054651E32193A6EC0067EC1A /* SongDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDetailController.swift; sourceTree = "<group>"; };
 		475ABAE3CC86B0F100CA80CD /* Pods-WhyDontYou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhyDontYou.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhyDontYou/Pods-WhyDontYou.debug.xcconfig"; sourceTree = "<group>"; };
 		71179042286D5DB6BB84DEDA /* Pods-WhyDontYou.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhyDontYou.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhyDontYou/Pods-WhyDontYou.release.xcconfig"; sourceTree = "<group>"; };
 		8E9E54A4574FF69929098912 /* Pods_WhyDontYou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhyDontYou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +87,7 @@
 		054651A921909ABA0067EC1A /* WhyDontYou */ = {
 			isa = PBXGroup;
 			children = (
+				054651E52193A8460067EC1A /* SongDetail */,
 				054651DC21924E080067EC1A /* Model */,
 				054651D921924DA80067EC1A /* ApiService */,
 				054651D821924D400067EC1A /* MainCellsController */,
@@ -169,6 +172,14 @@
 				054651DD21924E180067EC1A /* Video.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		054651E52193A8460067EC1A /* SongDetail */ = {
+			isa = PBXGroup;
+			children = (
+				054651E32193A6EC0067EC1A /* SongDetailController.swift */,
+			);
+			path = SongDetail;
 			sourceTree = "<group>";
 		};
 		8CA9467558BBF679257A9B47 /* Pods */ = {
@@ -316,6 +327,7 @@
 				054651CD2190CF3D0067EC1A /* MainController.swift in Sources */,
 				054651B321909ABA0067EC1A /* WhyDontYou.xcdatamodeld in Sources */,
 				054651C32190A7D50067EC1A /* PageOneController.swift in Sources */,
+				054651E42193A6EC0067EC1A /* SongDetailController.swift in Sources */,
 				054651D52192109C0067EC1A /* BarMenuCell.swift in Sources */,
 				054651E121924F240067EC1A /* HomeCell.swift in Sources */,
 				054651D22191EEE20067EC1A /* MainView.swift in Sources */,

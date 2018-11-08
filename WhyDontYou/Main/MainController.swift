@@ -22,6 +22,7 @@ class MainController: UIViewController {
     let cellMenuId = "cellMenuId"
     let cellHomeId = "cellHomeId"
     
+    
     let horizontalBarView: UIView = UIView()
     
     override func viewDidLoad() {
@@ -47,6 +48,7 @@ class MainController: UIViewController {
         self.collectionSongs.dataSource = self
         
         
+        
         //Cells for the menu
         collectionMenu.register(BarMenu.self, forCellWithReuseIdentifier: self.cellMenuId)
         
@@ -55,6 +57,8 @@ class MainController: UIViewController {
         
         self.collectionMenu.reloadData()
         self.collectionSongs.reloadData()
+        
+        
         
     }
     
@@ -76,7 +80,7 @@ class MainController: UIViewController {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 1
+        layout.minimumLineSpacing = 0
         layout.scrollDirection = .horizontal
         let posicionGrid:CGRect = CGRect(x: 0, y: statusBarHeight, width: width, height: height * 0.07)
         collectionMenu = UICollectionView(frame: posicionGrid, collectionViewLayout: layout)
@@ -90,6 +94,7 @@ class MainController: UIViewController {
         
         let layoutSongs = UICollectionViewFlowLayout()
         layoutSongs.scrollDirection = .horizontal
+        layoutSongs.minimumLineSpacing = 0
         let positionGrid: CGRect = CGRect(x: 0, y: collectionMenu.frame.origin.y + collectionMenu.frame.height, width: width, height: height - collectionMenu.frame.height - statusBarHeight)
         collectionSongs = UICollectionView(frame: positionGrid, collectionViewLayout: layoutSongs)
         collectionSongs.backgroundColor = UIColor.white
@@ -127,7 +132,9 @@ extension MainController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
              //   identifier = cellHomeId
             //}
             
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! HomeCellController
+            cell.songDelegate = self
+            
             return cell
  
         default:
@@ -169,6 +176,26 @@ extension MainController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
             break
         }
         
+    }
+    
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        print(targetContentOffset.pointee.x / view.frame.width)
+        
+        let index = targetContentOffset.pointee.x / view.frame.width
+        let indexPath = NSIndexPath(item: Int(index), section: 0)
+        collectionMenu.selectItem(at: indexPath as IndexPath, animated: true, scrollPosition: [])
+    }
+    
+    
+}
+
+
+extension MainController: SongDelegate {
+    func goToDetailSong(song: Video) {
+        let detailSong = SongDetailController()
+        navigationController?.pushViewController(detailSong, animated: true)
+        print("Datos: \(song)")
     }
     
     

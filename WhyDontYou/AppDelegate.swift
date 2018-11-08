@@ -28,7 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var firstVC: UIViewController!
         
         if walkthrough {
-             firstVC = MainController()
+            let mainController = MainController()
+            firstVC = UINavigationController(rootViewController: mainController)
+            
         } else {
              firstVC = WalkthroughController()
         }
