@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WhyDontYou/MainCellsController/HomeCellController.swift"
-            timestampString = "563388097.971028"
+            timestampString = "563503398.830916"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "fetchHome()"
             landmarkType = "7">
          </BreakpointContent>

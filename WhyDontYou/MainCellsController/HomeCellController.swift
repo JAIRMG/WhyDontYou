@@ -37,6 +37,8 @@ class HomeCellController: UICollectionViewCell {
         APiService.sharedInstance.fetchForUrlString(urlString: "https://s3-us-west-2.amazonaws.com/youtubeassets/home.json") { (videos: [Video]) in
             self.videos = videos
             self.collectionHome.reloadData()
+            
+            
         }
         
     }
@@ -72,25 +74,25 @@ extension HomeCellController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellHomeId, for: indexPath) as! HomeCell
+        
+        cell.setUpViews(indexPath: indexPath.row)
         cell.video = videos?[indexPath.item]
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.frame.width, height: self.frame.height * 0.3)
+        return CGSize(width: self.frame.width, height: self.frame.height * 0.5)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Presiono celda \(indexPath.row)")
         
-        let video = videos?[indexPath.item]
-        
+        let video = videos?[indexPath.item]        
         songDelegate.goToDetailSong(song: video!)
         
         
     }
-    
-    
+   
     
 }

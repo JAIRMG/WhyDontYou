@@ -15,12 +15,14 @@ class MainController: UIViewController {
     var height: CGFloat = CGFloat()
     var width: CGFloat = CGFloat()
     
-    //let mainView = MainView()
     var collectionMenu: UICollectionView!
     var collectionSongs: UICollectionView!
     let menuElements = ["Home","Others","News","Others"]
     let cellMenuId = "cellMenuId"
+    
+    //Main cells
     let cellHomeId = "cellHomeId"
+    let cellArticlesId = "cellArticlesId"
     
     
     let horizontalBarView: UIView = UIView()
@@ -36,12 +38,6 @@ class MainController: UIViewController {
         //MARK: init view
         setUpViews()
         
-        //self.view = mainView.initView(mainView: self.view)
-        //collectionMenu = mainView.collectionMenu
-        collectionMenu.isScrollEnabled = false
-       // collectionSongs = mainView.collectionSongs
-        
-        
         
         //Delegates
         self.collectionMenu.delegate = self
@@ -52,10 +48,12 @@ class MainController: UIViewController {
         
         
         //Cells for the menu
+        collectionMenu.isScrollEnabled = false
         collectionMenu.register(BarMenu.self, forCellWithReuseIdentifier: self.cellMenuId)
         
         //Cells for the mainView
         collectionSongs.register(HomeCellController.self, forCellWithReuseIdentifier: cellHomeId)
+        collectionSongs.register(ArticlesCellController.self, forCellWithReuseIdentifier: cellArticlesId)
         
         self.collectionMenu.reloadData()
         self.collectionSongs.reloadData()
@@ -127,17 +125,20 @@ extension MainController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
             return cell
         case collectionSongs:
             
-            let identifier: String
-            //if indexPath.row == 0{
-                identifier = cellHomeId
-            //} else {
-             //   identifier = cellHomeId
-            //}
+            if indexPath.row == 0{
+                
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellHomeId, for: indexPath) as! HomeCellController
+                cell.songDelegate = self
+                return cell
+                
+            } else {
+                
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellArticlesId, for: indexPath) as! ArticlesCellController
+                return cell
+                
+            }
             
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! HomeCellController
-            cell.songDelegate = self
             
-            return cell
  
         default:
             break
@@ -173,7 +174,10 @@ extension MainController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
         
         switch collectionView {
         case collectionMenu:
-            collectionSongs.scrollToItem(at: indexPath, at: [], animated: true)
+        
+        collectionSongs.scrollToItem(at: indexPath, at: [], animated: true)
+            
+            
         default:
             break
         }
