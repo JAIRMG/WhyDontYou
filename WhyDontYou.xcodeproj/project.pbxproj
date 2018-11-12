@@ -31,6 +31,9 @@
 		05A70D6A2196079300A481B3 /* YanoneKaffeesatz-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05A70D662196079300A481B3 /* YanoneKaffeesatz-Bold.ttf */; };
 		05A70D6C21963C0700A481B3 /* ArticlesCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A70D6B21963C0700A481B3 /* ArticlesCellController.swift */; };
 		05A70D6E2196465A00A481B3 /* ArticlesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A70D6D2196465A00A481B3 /* ArticlesCell.swift */; };
+		05A70D70219A101A00A481B3 /* NewsCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A70D6F219A101A00A481B3 /* NewsCellController.swift */; };
+		05A70D72219A32F800A481B3 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A70D71219A32F800A481B3 /* NewsCell.swift */; };
+		05A70D74219A366500A481B3 /* OthersCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A70D73219A366500A481B3 /* OthersCellController.swift */; };
 		CD89CFE2F75F348BEF4C936A /* Pods_WhyDontYou.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E9E54A4574FF69929098912 /* Pods_WhyDontYou.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +64,9 @@
 		05A70D662196079300A481B3 /* YanoneKaffeesatz-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YanoneKaffeesatz-Bold.ttf"; sourceTree = "<group>"; };
 		05A70D6B21963C0700A481B3 /* ArticlesCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesCellController.swift; sourceTree = "<group>"; };
 		05A70D6D2196465A00A481B3 /* ArticlesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesCell.swift; sourceTree = "<group>"; };
+		05A70D6F219A101A00A481B3 /* NewsCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCellController.swift; sourceTree = "<group>"; };
+		05A70D71219A32F800A481B3 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		05A70D73219A366500A481B3 /* OthersCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersCellController.swift; sourceTree = "<group>"; };
 		475ABAE3CC86B0F100CA80CD /* Pods-WhyDontYou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhyDontYou.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhyDontYou/Pods-WhyDontYou.debug.xcconfig"; sourceTree = "<group>"; };
 		71179042286D5DB6BB84DEDA /* Pods-WhyDontYou.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhyDontYou.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhyDontYou/Pods-WhyDontYou.release.xcconfig"; sourceTree = "<group>"; };
 		8E9E54A4574FF69929098912 /* Pods_WhyDontYou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhyDontYou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +157,7 @@
 				054651D42192109C0067EC1A /* BarMenuCell.swift */,
 				054651E021924F240067EC1A /* HomeCell.swift */,
 				05A70D6D2196465A00A481B3 /* ArticlesCell.swift */,
+				05A70D71219A32F800A481B3 /* NewsCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -160,6 +167,8 @@
 			children = (
 				054651D6219226720067EC1A /* HomeCellController.swift */,
 				05A70D6B21963C0700A481B3 /* ArticlesCellController.swift */,
+				05A70D6F219A101A00A481B3 /* NewsCellController.swift */,
+				05A70D73219A366500A481B3 /* OthersCellController.swift */,
 			);
 			path = MainCellsController;
 			sourceTree = "<group>";
@@ -353,10 +362,13 @@
 				054651C32190A7D50067EC1A /* PageOneController.swift in Sources */,
 				054651E42193A6EC0067EC1A /* SongDetailController.swift in Sources */,
 				054651D52192109C0067EC1A /* BarMenuCell.swift in Sources */,
+				05A70D70219A101A00A481B3 /* NewsCellController.swift in Sources */,
 				054651E121924F240067EC1A /* HomeCell.swift in Sources */,
 				054651DE21924E180067EC1A /* Video.swift in Sources */,
 				054651C82190C23B0067EC1A /* GeneralFunctions.swift in Sources */,
+				05A70D74219A366500A481B3 /* OthersCellController.swift in Sources */,
 				054651C52190A84C0067EC1A /* PageTwoController.swift in Sources */,
+				05A70D72219A32F800A481B3 /* NewsCell.swift in Sources */,
 				054651DB21924DC40067EC1A /* ApiService.swift in Sources */,
 				054651CF2190CFE20067EC1A /* PageFourController.swift in Sources */,
 				054651C021909BEF0067EC1A /* WalkthroughController.swift in Sources */,

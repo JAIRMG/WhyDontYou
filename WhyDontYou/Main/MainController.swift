@@ -23,6 +23,8 @@ class MainController: UIViewController {
     //Main cells
     let cellHomeId = "cellHomeId"
     let cellArticlesId = "cellArticlesId"
+    let cellNewsId = "cellNewsId"
+    let cellOthersId = "cellOthersId"
     
     
     let horizontalBarView: UIView = UIView()
@@ -54,6 +56,8 @@ class MainController: UIViewController {
         //Cells for the mainView
         collectionSongs.register(HomeCellController.self, forCellWithReuseIdentifier: cellHomeId)
         collectionSongs.register(ArticlesCellController.self, forCellWithReuseIdentifier: cellArticlesId)
+        collectionSongs.register(NewsCellController.self, forCellWithReuseIdentifier: cellNewsId)
+        collectionSongs.register(OthersCellController.self, forCellWithReuseIdentifier: cellOthersId)
         
         self.collectionMenu.reloadData()
         self.collectionSongs.reloadData()
@@ -131,11 +135,17 @@ extension MainController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
                 cell.songDelegate = self
                 return cell
                 
-            } else {
+            } else if indexPath.row == 1{
                 
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellArticlesId, for: indexPath) as! ArticlesCellController
                 return cell
                 
+            } else if indexPath.row == 2{
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellNewsId, for: indexPath) as! NewsCellController
+                return cell
+            } else {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellOthersId, for: indexPath) as! OthersCellController
+                return cell
             }
             
             
