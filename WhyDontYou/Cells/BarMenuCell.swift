@@ -26,7 +26,6 @@ class BarMenu: UICollectionViewCell {
         
         text.frame = CGRect(x: 0, y: self.frame.height * 0.3, width: self.frame.width, height: self.frame.height * 0.6)
         text.backgroundColor = UIColor.clear
-        text.setTitleColor(UIColor.black, for: .normal)
         text.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         text.titleLabel?.numberOfLines = 1
         text.titleLabel?.textAlignment = .center

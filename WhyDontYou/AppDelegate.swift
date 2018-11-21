@@ -20,6 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        //NightMode
+        if(!UserDefaults.standard.bool(forKey: "firstTimeNightMode")){
+            UserDefaults.standard.set(false, forKey: "firstTimeNightMode")
+            UserDefaults.standard.set(false, forKey: "nightMode")
+        } else {
+            nightModeFunction(value: !UserDefaults.standard.bool(forKey: "nightMode"))
+        }
+        
         //Crashlytics
         Fabric.with([Crashlytics.self])
         

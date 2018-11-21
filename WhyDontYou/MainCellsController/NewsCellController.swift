@@ -27,7 +27,7 @@ class NewsCellController: UICollectionViewCell {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 0
         layout.scrollDirection = .vertical
-        let posicionGrid: CGRect = CGRect(x: 0, y: 09, width: self.frame.width, height: self.frame.height)
+        let posicionGrid: CGRect = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
         collectionNews = UICollectionView(frame: posicionGrid, collectionViewLayout: layout)
         collectionNews.backgroundColor = UIColor.clear
         collectionNews.delegate = self

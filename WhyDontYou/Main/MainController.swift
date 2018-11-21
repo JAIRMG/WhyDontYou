@@ -26,6 +26,10 @@ class MainController: UIViewController {
     let cellNewsId = "cellNewsId"
     let cellOthersId = "cellOthersId"
     
+    //Text Color
+    var textColor: UIColor = UIColor.black
+    
+    private var themedStatusBarStyle: UIStatusBarStyle?
     
     let horizontalBarView: UIView = UIView()
     
@@ -39,7 +43,6 @@ class MainController: UIViewController {
         
         //MARK: init view
         setUpViews()
-        
         
         //Delegates
         self.collectionMenu.delegate = self
@@ -57,7 +60,7 @@ class MainController: UIViewController {
         collectionSongs.register(HomeCellController.self, forCellWithReuseIdentifier: cellHomeId)
         collectionSongs.register(ArticlesCellController.self, forCellWithReuseIdentifier: cellArticlesId)
         collectionSongs.register(NewsCellController.self, forCellWithReuseIdentifier: cellNewsId)
-        collectionSongs.register(OthersCellController.self, forCellWithReuseIdentifier: cellOthersId)
+        collectionSongs.register(SettingsCellController.self, forCellWithReuseIdentifier: cellOthersId)
         
         self.collectionMenu.reloadData()
         self.collectionSongs.reloadData()
@@ -75,7 +78,6 @@ class MainController: UIViewController {
     }
     
     func setUpViews(){
-        
         self.view.backgroundColor = UIColor.white
         
         height = self.view.frame.height
@@ -91,7 +93,7 @@ class MainController: UIViewController {
         collectionMenu.backgroundColor = UIColor.white
         
         //Page indicator
-        horizontalBarView.backgroundColor = UIColor.black
+        horizontalBarView.backgroundColor = textColor
         horizontalBarView.frame = CGRect(x: 0, y: collectionMenu.frame.height * 0.93, width: collectionMenu.frame.width * 0.25, height: collectionMenu.frame.height * 0.07)
         horizontalBarView.isUserInteractionEnabled = false
         collectionMenu.addSubview(horizontalBarView)
@@ -126,6 +128,7 @@ extension MainController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
         case collectionMenu:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cellMenuId, for: indexPath as IndexPath) as! BarMenu
             cell.text.setTitle(menuElements[indexPath.row], for: .normal)
+           cell.text.setTitleColor(textColor, for: .normal)
             return cell
         case collectionSongs:
             
@@ -144,7 +147,7 @@ extension MainController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellNewsId, for: indexPath) as! NewsCellController
                 return cell
             } else {
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellOthersId, for: indexPath) as! OthersCellController
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellOthersId, for: indexPath) as! SettingsCellController
                 return cell
             }
             
@@ -208,6 +211,7 @@ extension MainController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
 
 
 extension MainController: SongDelegate {
+    
     func goToDetailSong(song: Video) {
         let detailSong = SongDetailController()
         detailSong.song = song
@@ -216,5 +220,25 @@ extension MainController: SongDelegate {
     }
     
     
-    
 }
+
+//extension MainController: Themed {
+//    
+//    func applyTheme(_ theme: AppTheme) {
+//        view.backgroundColor = theme.backgroundColor
+//        themedStatusBarStyle = theme.statusBarStyle
+//        setNeedsStatusBarAppearanceUpdate()
+//        self.collectionMenu.backgroundColor = theme.backgroundColor
+//        self.textColor = theme.barForegroundColor
+//        self.collectionMenu.reloadData()
+//        self.horizontalBarView.backgroundColor = textColor
+//        
+//      
+//    }
+//    
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//        return themedStatusBarStyle ?? super.preferredStatusBarStyle
+//    }
+//}
+//
+

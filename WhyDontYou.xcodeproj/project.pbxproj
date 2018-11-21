@@ -33,7 +33,9 @@
 		05A70D6E2196465A00A481B3 /* ArticlesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A70D6D2196465A00A481B3 /* ArticlesCell.swift */; };
 		05A70D70219A101A00A481B3 /* NewsCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A70D6F219A101A00A481B3 /* NewsCellController.swift */; };
 		05A70D72219A32F800A481B3 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A70D71219A32F800A481B3 /* NewsCell.swift */; };
-		05A70D74219A366500A481B3 /* OthersCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A70D73219A366500A481B3 /* OthersCellController.swift */; };
+		05A70D74219A366500A481B3 /* SettingsCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A70D73219A366500A481B3 /* SettingsCellController.swift */; };
+		05A70D76219A4E0E00A481B3 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A70D75219A4E0E00A481B3 /* SettingCell.swift */; };
+		05A70D79219B282400A481B3 /* NightModeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A70D78219B282400A481B3 /* NightModeCell.swift */; };
 		CD89CFE2F75F348BEF4C936A /* Pods_WhyDontYou.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E9E54A4574FF69929098912 /* Pods_WhyDontYou.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,7 +68,9 @@
 		05A70D6D2196465A00A481B3 /* ArticlesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesCell.swift; sourceTree = "<group>"; };
 		05A70D6F219A101A00A481B3 /* NewsCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCellController.swift; sourceTree = "<group>"; };
 		05A70D71219A32F800A481B3 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
-		05A70D73219A366500A481B3 /* OthersCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersCellController.swift; sourceTree = "<group>"; };
+		05A70D73219A366500A481B3 /* SettingsCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellController.swift; sourceTree = "<group>"; };
+		05A70D75219A4E0E00A481B3 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
+		05A70D78219B282400A481B3 /* NightModeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightModeCell.swift; sourceTree = "<group>"; };
 		475ABAE3CC86B0F100CA80CD /* Pods-WhyDontYou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhyDontYou.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhyDontYou/Pods-WhyDontYou.debug.xcconfig"; sourceTree = "<group>"; };
 		71179042286D5DB6BB84DEDA /* Pods-WhyDontYou.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhyDontYou.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhyDontYou/Pods-WhyDontYou.release.xcconfig"; sourceTree = "<group>"; };
 		8E9E54A4574FF69929098912 /* Pods_WhyDontYou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhyDontYou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +158,7 @@
 		054651D3219210860067EC1A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				05A70D77219B27FD00A481B3 /* Settings */,
 				054651D42192109C0067EC1A /* BarMenuCell.swift */,
 				054651E021924F240067EC1A /* HomeCell.swift */,
 				05A70D6D2196465A00A481B3 /* ArticlesCell.swift */,
@@ -168,7 +173,7 @@
 				054651D6219226720067EC1A /* HomeCellController.swift */,
 				05A70D6B21963C0700A481B3 /* ArticlesCellController.swift */,
 				05A70D6F219A101A00A481B3 /* NewsCellController.swift */,
-				05A70D73219A366500A481B3 /* OthersCellController.swift */,
+				05A70D73219A366500A481B3 /* SettingsCellController.swift */,
 			);
 			path = MainCellsController;
 			sourceTree = "<group>";
@@ -207,6 +212,15 @@
 				05A70D612196078200A481B3 /* Monoton-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		05A70D77219B27FD00A481B3 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				05A70D75219A4E0E00A481B3 /* SettingCell.swift */,
+				05A70D78219B282400A481B3 /* NightModeCell.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		8CA9467558BBF679257A9B47 /* Pods */ = {
@@ -366,7 +380,8 @@
 				054651E121924F240067EC1A /* HomeCell.swift in Sources */,
 				054651DE21924E180067EC1A /* Video.swift in Sources */,
 				054651C82190C23B0067EC1A /* GeneralFunctions.swift in Sources */,
-				05A70D74219A366500A481B3 /* OthersCellController.swift in Sources */,
+				05A70D74219A366500A481B3 /* SettingsCellController.swift in Sources */,
+				05A70D76219A4E0E00A481B3 /* SettingCell.swift in Sources */,
 				054651C52190A84C0067EC1A /* PageTwoController.swift in Sources */,
 				05A70D72219A32F800A481B3 /* NewsCell.swift in Sources */,
 				054651DB21924DC40067EC1A /* ApiService.swift in Sources */,
@@ -375,6 +390,7 @@
 				054651AB21909ABA0067EC1A /* AppDelegate.swift in Sources */,
 				05A70D6C21963C0700A481B3 /* ArticlesCellController.swift in Sources */,
 				054651D7219226720067EC1A /* HomeCellController.swift in Sources */,
+				05A70D79219B282400A481B3 /* NightModeCell.swift in Sources */,
 				054651CA2190CB630067EC1A /* PageThreeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

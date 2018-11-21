@@ -22,9 +22,22 @@ let fontYanoneBold = "YanoneKaffeesatz-Bold"
 let fontMonoton = "Monoton-Regular"
 
 
+//MARK: COLORS
+var colorCell: UIColor = UIColor.black
+var colorTextCell: UIColor = UIColor.white
+
+
+func nightModeFunction(value: Bool) {
+    if value{
+        colorTextCell = UIColor.black
+        colorCell = UIColor.white
+    } else {
+        colorTextCell = UIColor.white
+        colorCell = UIColor.black
+    }
+}
+
 //MARK: EXTENSIONS
-
-
 extension UIImage {
     
     /// Creates a circular outline image.
@@ -140,6 +153,20 @@ class CustomImageView: UIImageView{
             
             }.resume()
         
+    }
+}
+
+extension UITableView {
+    func reloadData(completion: @escaping ()->()) {
+        UIView.animate(withDuration: 0, animations: { self.reloadData() })
+        { _ in completion() }
+    }
+}
+
+extension UICollectionView {
+    func reloadData(completion: @escaping ()->()) {
+        UIView.animate(withDuration: 0, animations: { self.reloadData() })
+        { _ in completion() }
     }
 }
 
