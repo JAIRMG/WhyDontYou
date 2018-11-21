@@ -35,7 +35,6 @@ class ArticlesCellController: UICollectionViewCell {
         title.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height * 0.2)
         title.setTitle("Articles  🦍", for: .normal)
         title.titleLabel?.font = UIFont(name: fontMonoton, size: 25)
-        title.setTitleColor(UIColor.black, for: .normal)
         title.contentHorizontalAlignment = .center
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()

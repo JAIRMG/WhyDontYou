@@ -26,9 +26,6 @@ class MainController: UIViewController {
     let cellNewsId = "cellNewsId"
     let cellOthersId = "cellOthersId"
     
-    //Text Color
-    var textColor: UIColor = UIColor.black
-    
     private var themedStatusBarStyle: UIStatusBarStyle?
     
     let horizontalBarView: UIView = UIView()
@@ -78,7 +75,7 @@ class MainController: UIViewController {
     }
     
     func setUpViews(){
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = colorBackgroundTable
         
         height = self.view.frame.height
         width = self.view.frame.width
@@ -90,10 +87,10 @@ class MainController: UIViewController {
         layout.scrollDirection = .horizontal
         let posicionGrid:CGRect = CGRect(x: 0, y: statusBarHeight, width: width, height: height * 0.07)
         collectionMenu = UICollectionView(frame: posicionGrid, collectionViewLayout: layout)
-        collectionMenu.backgroundColor = UIColor.white
+        collectionMenu.backgroundColor = colorBackgroundTable
         
         //Page indicator
-        horizontalBarView.backgroundColor = textColor
+        horizontalBarView.backgroundColor = colorTextCell
         horizontalBarView.frame = CGRect(x: 0, y: collectionMenu.frame.height * 0.93, width: collectionMenu.frame.width * 0.25, height: collectionMenu.frame.height * 0.07)
         horizontalBarView.isUserInteractionEnabled = false
         collectionMenu.addSubview(horizontalBarView)
@@ -124,30 +121,43 @@ extension MainController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
     
      func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        //lo saqué del switch para que solo lo haga una vez
+        horizontalBarView.backgroundColor = colorTextCell
+        self.view.backgroundColor = colorBackgroundTable
+        themedStatusBarStyle = statusBarStyle
+        setNeedsStatusBarAppearanceUpdate()
+        
         switch collectionView {
         case collectionMenu:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cellMenuId, for: indexPath as IndexPath) as! BarMenu
             cell.text.setTitle(menuElements[indexPath.row], for: .normal)
-           cell.text.setTitleColor(textColor, for: .normal)
+           cell.text.setTitleColor(colorTextCell, for: .normal)
+            
             return cell
         case collectionSongs:
             
             if indexPath.row == 0{
                 
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellHomeId, for: indexPath) as! HomeCellController
+                cell.collectionHome.backgroundColor = colorBackgroundTable
                 cell.songDelegate = self
                 return cell
                 
             } else if indexPath.row == 1{
                 
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellArticlesId, for: indexPath) as! ArticlesCellController
+                cell.collectionView.backgroundColor = colorBackgroundTable
+                cell.title.setTitleColor(colorTextCell, for: .normal)
+                cell.title.backgroundColor = colorCell
                 return cell
                 
             } else if indexPath.row == 2{
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellNewsId, for: indexPath) as! NewsCellController
+                cell.collectionNews.backgroundColor = colorBackgroundTable
                 return cell
             } else {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellOthersId, for: indexPath) as! SettingsCellController
+                cell.updateMenuProtocol = self
                 return cell
             }
             
@@ -210,13 +220,25 @@ extension MainController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
 }
 
 
-extension MainController: SongDelegate {
+extension MainController: SongDelegate, updateMenuProtocol {
+    func updateMenu() {
+        self.collectionMenu.backgroundColor = colorBackgroundTable
+        self.collectionMenu.reloadData()
+        self.collectionSongs.reloadData()
+        
+    }
+    
     
     func goToDetailSong(song: Video) {
         let detailSong = SongDetailController()
         detailSong.song = song
         navigationController?.pushViewController(detailSong, animated: true)
         print("Datos: \(song)")
+    }
+    
+    //Se necesita sobreescribir al método para cambiar la barra de color
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+            return themedStatusBarStyle ?? super.preferredStatusBarStyle
     }
     
     

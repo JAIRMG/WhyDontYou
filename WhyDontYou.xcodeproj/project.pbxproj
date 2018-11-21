@@ -36,6 +36,7 @@
 		05A70D74219A366500A481B3 /* SettingsCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A70D73219A366500A481B3 /* SettingsCellController.swift */; };
 		05A70D76219A4E0E00A481B3 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A70D75219A4E0E00A481B3 /* SettingCell.swift */; };
 		05A70D79219B282400A481B3 /* NightModeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A70D78219B282400A481B3 /* NightModeCell.swift */; };
+		05C2F6DD21A5C57200D2A8D8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C2F6DC21A5C57200D2A8D8 /* Extensions.swift */; };
 		CD89CFE2F75F348BEF4C936A /* Pods_WhyDontYou.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E9E54A4574FF69929098912 /* Pods_WhyDontYou.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		05A70D73219A366500A481B3 /* SettingsCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellController.swift; sourceTree = "<group>"; };
 		05A70D75219A4E0E00A481B3 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		05A70D78219B282400A481B3 /* NightModeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightModeCell.swift; sourceTree = "<group>"; };
+		05C2F6DC21A5C57200D2A8D8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		475ABAE3CC86B0F100CA80CD /* Pods-WhyDontYou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhyDontYou.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhyDontYou/Pods-WhyDontYou.debug.xcconfig"; sourceTree = "<group>"; };
 		71179042286D5DB6BB84DEDA /* Pods-WhyDontYou.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhyDontYou.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhyDontYou/Pods-WhyDontYou.release.xcconfig"; sourceTree = "<group>"; };
 		8E9E54A4574FF69929098912 /* Pods_WhyDontYou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhyDontYou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				054651C72190C23B0067EC1A /* GeneralFunctions.swift */,
+				05C2F6DC21A5C57200D2A8D8 /* Extensions.swift */,
 			);
 			path = GeneralFunctions;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05C2F6DD21A5C57200D2A8D8 /* Extensions.swift in Sources */,
 				054651CD2190CF3D0067EC1A /* MainController.swift in Sources */,
 				05A70D6E2196465A00A481B3 /* ArticlesCell.swift in Sources */,
 				054651B321909ABA0067EC1A /* WhyDontYou.xcdatamodeld in Sources */,

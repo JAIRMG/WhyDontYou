@@ -55,7 +55,6 @@ class HomeCellController: UICollectionViewCell {
         collectionHome = UICollectionView(frame: positionGrid, collectionViewLayout: layout)
         collectionHome.dataSource = self
         collectionHome.delegate = self
-        collectionHome.backgroundColor = UIColor.white
         collectionHome.register(HomeCell.self, forCellWithReuseIdentifier: cellHomeId)
         addSubview(collectionHome)
         

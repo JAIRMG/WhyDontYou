@@ -40,7 +40,11 @@ class NightModeCell: UITableViewCell {
         nightMode.frame.origin.x = self.frame.width * 0.9
         nightMode.frame.origin.y = (self.frame.height - nightMode.frame.height) / 2
         nightMode.addTarget(self, action: #selector(self.changeNightMode), for: .valueChanged)
-        
+        if(UserDefaults.standard.bool(forKey: "nightMode")){
+            nightMode.isOn = true
+        } else {
+            nightMode.isOn = false
+        }
         
         addSubview(nightMode)
         addSubview(texto)

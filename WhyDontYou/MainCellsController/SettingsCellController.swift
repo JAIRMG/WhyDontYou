@@ -8,11 +8,17 @@
 
 import UIKit
 
+protocol updateMenuProtocol {
+    func updateMenu()
+}
+
 class SettingsCellController: UICollectionViewCell {
     
     var tableView: UITableView!
     let cellSettingId = "cellSettingId"
     let nighModeCellId = "nighModeCellId"
+    let mainController = MainController()
+    var updateMenuProtocol: updateMenuProtocol!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,7 +33,7 @@ class SettingsCellController: UICollectionViewCell {
         
         let posicionGrid: CGRect = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
         tableView = UITableView(frame: posicionGrid, style: UITableViewStyle.grouped)
-        tableView.backgroundColor = UIColor(rgba: "#eeeeee")
+        tableView.backgroundColor = colorBackgroundTable
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(SettingCell.self, forCellReuseIdentifier: cellSettingId)
@@ -80,7 +86,6 @@ extension SettingsCellController: NightModeProtocol{
     
     func nightMode() {
 
-        
         if !UserDefaults.standard.bool(forKey: "firstTimeNightMode"){
             UserDefaults.standard.set(true, forKey: "firstTimeNightMode")
             UserDefaults.standard.set(true, forKey: "nightMode")
@@ -88,11 +93,13 @@ extension SettingsCellController: NightModeProtocol{
         
         if(UserDefaults.standard.bool(forKey: "nightMode")){
             nightModeFunction(value: true)
-            tableView.reloadData()
+            setUpViews()
+            updateMenuProtocol.updateMenu()
             UserDefaults.standard.set(false, forKey: "nightMode")
         } else {
             nightModeFunction(value: false)
-            tableView.reloadData()
+            setUpViews()
+            updateMenuProtocol.updateMenu()
             UserDefaults.standard.set(true, forKey: "nightMode")
         }
         

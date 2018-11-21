@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if(!UserDefaults.standard.bool(forKey: "firstTimeNightMode")){
             UserDefaults.standard.set(false, forKey: "firstTimeNightMode")
             UserDefaults.standard.set(false, forKey: "nightMode")
+            nightModeFunction(value: true)
         } else {
             nightModeFunction(value: !UserDefaults.standard.bool(forKey: "nightMode"))
         }
